@@ -32,7 +32,7 @@ class UploadImageView(APIView):
         serializer = UploadImageSerializer(images, many=True)
         return Response({"UploadImages": serializer.data})
 
-    parser_classes = (MultiPartParser, FormParser)
+    
 
     def post(self, request, *args, **kwargs):
         file_serializer = UploadImageSerializer(data=request.data)
